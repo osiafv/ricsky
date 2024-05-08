@@ -20,7 +20,7 @@ let folderName = process.argv[3];
 
 const clientWithAuth = new octikit({
     //auth: token
-    auth: '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'
+    auth: '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'
 });
 
 //create repository
