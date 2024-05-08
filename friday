@@ -1,0 +1,63 @@
+#token=$2
+#foldername=$3
+#commitmsg=$4
+
+foldername=$2
+commitmsg=$3
+
+pushrepo(){
+    git config --global --remove-section user
+    git config --global --remove-section credential
+    git remote remove origin
+    git config --global credential.helper store
+    git config --global user.user "osiafv"
+    git config --global user.email "skyzbott@gmail.com"
+    git config --global user.password "Risky132"
+    git config user.password "Risky132"
+    git config --global url.https://osiafv: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@github.com/.insteadOf "https://github.com/"
+    git init
+    git add .
+    git commit -m "$commitmsg"
+    git branch -m main
+    git remote add origin https://github.com/osiafv/$foldername.git
+    git push -u origin main
+    git config --global --remove-section url."https://osiafv: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@github.com/"
+}
+
+pushrepo1(){
+    git config --global --remove-section user
+    git config --global --remove-section credential
+    git remote remove origin
+    git config --global user.user "osiafv"
+    git config --global user.email "skyzbott@gmail.com"
+    git config --global user.password "Risky132"
+    git config user.password "Risky132"
+    git config --global credential.helper store
+    git config --global url."https://osiafv:$token@github.com/".insteadOf "https://github.com/"
+    git init
+    git add .
+    git commit -m "$commitmsg" 
+    git branch -m main
+    git remote add origin https://github.com/osiafv/$foldername.git
+    git push -u origin main
+    git config --global --remove-section url."https://osiafv:$token@github.com/"
+}
+update(){
+    git add .
+    git commit -m "$commitmsg"
+    git push
+}
+
+
+
+if [ $1 == "repo" ]
+then
+    #node C:\index.js $2 $3 $4
+    node C:\index.js $2 $3 
+elif [ $1 == "pushrepo" ]
+then
+    pushrepo
+elif [ $1 == "update" ]
+then
+    update
+fi
