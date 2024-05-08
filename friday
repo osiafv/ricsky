@@ -14,14 +14,14 @@ pushrepo(){
     git config --global user.email "skyzbott@gmail.com"
     git config --global user.password "Risky132"
     git config user.password "Risky132"
-    git config --global url.https://osiafv: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@github.com/.insteadOf "https://github.com/"
+    git config --global url.https://api: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@github.com/.insteadOf "https://github.com/"
     git init
     git add .
     git commit -m "$commitmsg"
     git branch -m main
     git remote add origin https://github.com/osiafv/$foldername.git
     git push -u origin main
-    git config --global --remove-section url."https://osiafv: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@github.com/"
+    git config --global --remove-section url."https://api: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@github.com/"
 }
 
 pushrepo1(){
